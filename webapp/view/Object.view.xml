@@ -1,0 +1,54 @@
+<mvc:View
+  controllerName="cashmanagementinwi.controller.Object"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:semantic="sap.f.semantic"
+  xmlns:smartTable="sap.ui.comp.smarttable"
+  displayBlock="true"
+>
+
+  <semantic:SemanticPage
+    id="page"
+    headerPinnable="false"
+    toggleHeaderOnTitleClick="false"
+    busy="{objectView>/busy}"
+    busyIndicatorDelay="{objectView>/delay}"
+    class="sapUiResponsiveContentPadding"
+  >
+    <semantic:titleHeading>
+      
+    </semantic:titleHeading>
+<VBox id="_IDGenVBox1" class="sapUiSmallMarginTop">
+
+      <Panel id="_IDGenPanel2" backgroundDesign="Translucent" headerText="Informations générales">
+        <VBox id="_IDGenVBox2" class="sapUiSmallMargin">
+          <ObjectAttribute id="_IDGenObjectAttribute1" title="Société" text="{Societe}" class="boldText"  />
+          <ObjectAttribute id="_IDGenObjectAttribute2" title="N° de pièce" text="{NumeroDePiece}" class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute3" title="Exercice" text="{Exercice}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute4" title="Type de pièce" text="{TypeDePiece}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute5" title="Fournisseur" text="{Fournisseur}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute6" title="PJ" text="{Zpj}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute7" title="Date comptable" text="{DateComtable}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute8" title="Date d'échéance" text="{DateEcheance}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute9" title="Date document" text="{DateDocument}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute10" title="Condition de paiement" text="{ConditionPaiement}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute11" title="Blocage paiement" text="{BlocagePaiment}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute12" title="Mode de paiement" text="{ModePaiment}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute13" title="Mode paiement partenaire" text="{ModePartenaire}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute14" title="Code payeur" text="{CodePayeur}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute15" title="Rib fournisseur" text="{RibFournisseur}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute16" title="Nom payeur" text="{NomPayeur}"  class="boldText" />
+          <ObjectAttribute id="_IDGenObjectAttribute17" title="Rib payeur" text="{RibPayeur}"   class="boldText"/>
+          <ObjectAttribute id="_IDGenObjectAttribute18" title="Montant" text="{Montant}"  class="boldText"  />
+        </VBox>
+      </Panel>
+
+    </VBox>
+
+    <semantic:sendEmailAction>
+      <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress" />
+    </semantic:sendEmailAction>
+
+  </semantic:SemanticPage>
+
+</mvc:View>

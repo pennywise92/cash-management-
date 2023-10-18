@@ -1,0 +1,106 @@
+.boldText {
+  font-weight: bold;
+  font-family: Courier;
+  font-size: large;
+  color: black;
+}
+
+.sText {
+  font-weight: bold;
+  font-family: Courier;
+  font-size: small;
+}
+
+.bt {
+  border-radius: 10%;
+  height: 17px;
+  margin-right: 0.4rem;
+}
+
+.btn1 {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725AC1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725AC1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+.btn1:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+.btn1:active {
+  transform: scale(0.9);
+}
+
+
+.costum {
+  display: flex;
+  justify-content: left;
+  position: sticky;
+  font-family: Impact;
+  background-color: rgb(128, 101, 101);
+}
+
+.busy {
+  color: #981398;
+  font-family: Impact;
+}
+
+.sapMPanelContent {
+  margin-left: 11rem;
+}
+
+.costum2 {
+  margin-left: 12rem;
+}
+
+.img2 {
+  margin-left: 15rem;
+}
+
+#application-cashmanagementinwi-display-component---worklist,
+#application-cashmanagementinwi-display-component---worklist--Column1Title,
+#application-cashmanagementinwi-display-component---worklist--nameColumnTitle,
+#application-cashmanagementinwi-display-component---worklist--Column2Title,
+#application-cashmanagementinwi-display-component---worklist--Column3Title,
+#application-cashmanagementinwi-display-component---worklist--Column4Title,
+#application-cashmanagementinwi-display-component---worklist--Column5Title,
+#application-cashmanagementinwi-display-component---worklist--Column6Title,
+#application-cashmanagementinwi-display-component---worklist--Column7Title,
+#application-cashmanagementinwi-display-component---worklist--Column8Title,
+#application-cashmanagementinwi-display-component---worklist--Column9Title {
+  color: #000000;
+  font-family: Impact;
+}
+
+/* Add background colors */
+#application-cashmanagementinwi-display-component---worklist {
+  background-color: #f0f0f0;
+}
+
+#application-cashmanagementinwi-display-component---worklist--nameColumnTitle {
+  background-color: #c0c0c0;
+}
+
+#application-cashmanagementinwi-display-component---worklist--Column2Title,
+#application-cashmanagementinwi-display-component---worklist--Column3Title,
+#application-cashmanagementinwi-display-component---worklist--Column4Title,
+#application-cashmanagementinwi-display-component---worklist--Column5Title,
+#application-cashmanagementinwi-display-component---worklist--Column6Title,
+#application-cashmanagementinwi-display-component---worklist--Column7Title,
+#application-cashmanagementinwi-display-component---worklist--Column8Title,
+#application-cashmanagementinwi-display-component---worklist--Column9Title {
+  background-color: #e0e0e0;
+}

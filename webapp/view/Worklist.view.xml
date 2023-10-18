@@ -1,0 +1,189 @@
+<mvc:View
+    controllerName="cashmanagementinwi.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:comp="sap.ui.comp"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:column="sap.ui.table.Column"
+    displayBlock="true"
+    xmlns:table="sap.ui.table"
+    xmlns:sfb="sap.ui.comp.smartfilterbar"
+    xmlns:ucore="sap.ui.core.Control"
+
+>
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+       
+    >
+        <semantic:titleHeading >
+            
+            <FlexBox
+
+                id="_IDGenFlexBox2"
+                class="test75"
+                justifyContent="SpaceBetween"
+                alignItems="Center" >
+                <Image
+                    id="_IDGenImage1"
+                    src="../image/1.jpg"
+                    height="50px"
+                    decorative="true" 
+                    />
+                    <Panel id="_IDGenPanel1" class="sapUiSmallMarginBegin sapUiResponsiveMarginEnd sapUiTinyMarginBottom">
+          <Button id="Telecharger"   type="Accept" icon="sap-icon://inbox" text="Télécharger" press="Telecharger" />
+          <Button id="Blocker" type="Reject" icon="sap-icon://sys-cancel-2" text="Bloquer" press="Blocker" visible="true" />
+          <Button id="Afficher" type="Emphasized" icon="sap-icon://vds-file" text="Afficher PJ" press="Afficher" visible="true" />
+        </Panel>
+               
+               
+                
+            </FlexBox>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+            <sfb:SmartFilterBar
+                id="smartFilterBar"
+                entitySet="ZTAB_CASH_MANAGSet"
+                basicSearchFieldName="Societe"
+                persistencyKey="UniqueAndStablePersistencyKey"
+            >
+                <sfb:controlConfiguration>
+                    <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration1"
+                        key="Societe"
+                        mandatory="mandatory"
+                        visibleInAdvancedArea="true"
+                        filterType="single"/>
+                    <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration2"
+                        key="Exercice"
+                        mandatory="mandatory"
+                        visibleInAdvancedArea="true"
+                        filterType="range" />
+                    <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration3"
+                        key="NumeroDePiece"
+                        visibleInAdvancedArea="true"
+                        filterType="range"/>
+                    <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration4"
+                        key="Fournisseur"
+                        visibleInAdvancedArea="true"
+                        filterType="single"/>
+                    
+                    
+                    <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration7"
+                        key="TypeDePiece"
+                        visibleInAdvancedArea="true"
+                        filterType="single"/> 
+                  
+                      
+                     <sfb:ControlConfiguration
+                        id="_IDGenControlConfiguration10"
+                        key="BlocagePaiment"
+                        visibleInAdvancedArea="true"
+                        filterType="single"/>  
+                            
+
+                </sfb:controlConfiguration>
+            </sfb:SmartFilterBar>
+
+          
+        </semantic:headerContent>
+        <semantic:content>
+            <Table
+                id="table"
+               autoPopinMode="true"
+                popinLayout="GridSmall"
+                fixedLayout="false"
+                width="auto"
+                mode="MultiSelect"
+                alternateRowColors="true"
+                items="{
+                    path: '/ZTAB_CASH_MANAGSet',
+                    sorter: {
+                        path: 'Societe',
+                        descending: false
+                    }
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="nameColumn">
+                        <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+                    </Column>
+                    <Column id="unitNumberColumn" hAlign="End">
+                        <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+                    </Column>
+                    <Column id="_IDGenColumn1"  hAlign="End">
+                        <Text id="_IDGenText1" text="Fournisseur" />
+                         </Column>
+                         <Column id="_IDGenColumn2"  hAlign="End">
+                        <Text id="_IDGenText2" text="TypeDePiece" />
+                    </Column>
+                     <Column id="_IDGenColumn3"  hAlign="End">
+                        <Text id="_IDGenText3" text="Numpiece" />
+                    </Column>
+                   
+                </columns>
+
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1"
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1"
+                                title="{Societe}"/>
+                            <ObjectNumber id="_IDGenObjectNumber1"
+                                number="{
+                                    path: 'Montant',
+                                    formatter: '.formatter.numberUnit'
+                                }" />
+                            <ObjectIdentifier id="_IDGenObjectIdentifier2"
+                                title="{Fournisseur}"/>
+                                <ObjectIdentifier id="_IDGenObjectIdentifier3"
+                                title="{TypeDePiece}"/>
+                                <ObjectIdentifier id="_IDGenObjectIdentifier4"
+                                title="{Exercice}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </semantic:content>
+
+        
+    </semantic:SemanticPage>
+
+    
+
+    <BusyDialog
+        id="_IDGenBusyDialog1"
+        text="Your data is being loaded"
+        showCancelButton="true"
+        cancelButtonText="Cancel"
+        title="please wait"
+        class="busy"
+    />
+</mvc:View>
